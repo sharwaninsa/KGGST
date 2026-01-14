@@ -6,11 +6,11 @@ class SPARouter {
     constructor() {
         this.routes = {
             '/': this.homePage,
-            '/KGGST/about.html': this.aboutPage,
-            '/KGGST/mission.html': this.missionPage,
-            '/KGGST/team.html': this.teamPage,
-            '/KGGST/contact.html': this.contactPage,
-            '/KGGST/donate.html': this.donatePage
+            '/about': this.aboutPage,
+            '/mission': this.missionPage,
+            '/team': this.teamPage,
+            '/contact': this.contactPage,
+            '/donate': this.donatePage
         };
         
         this.app = document.getElementById('app');
@@ -32,7 +32,7 @@ class SPARouter {
                 e.preventDefault();
                 const link = e.target.closest('.nav-link');
                 const path = link.getAttribute('href');
-                this.navigate(`${path}`.html);
+                this.navigate(path);
             }
         });
         
@@ -60,18 +60,18 @@ class SPARouter {
     
     navigate(path) {
         // Clean up path (remove .html extension if present)
-        // if (path.endsWith('.html')) {
-        //     path = path.replace('.html', '');
-        // }
+        if (path.endsWith('.html')) {
+            path = path.replace('.html', '');
+        }
         
         // Handle root path
-        if (path === '/KGGST/index' || path === '/KGGST/index.html') {
-            path = '/KGSST/';
+        if (path === '/index' || path === '/index.html') {
+            path = '/';
         }
         
         // Update URL without page reload
-        if (window.location.pathname !== `KGGST${path}`) {
-            window.history.pushState({}, '', `/KGGST${path}`);
+        if (window.location.pathname !== path) {
+            window.history.pushState({}, '', path);
         }
         
         // Update active link in navbar
@@ -303,7 +303,7 @@ class SPARouter {
             </section>
             
             <!-- Parallax Image Section -->
-            <section class="parallax py-24" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.zappyworks.com/mad-banner.jpg');">
+            <section class="parallax py-24" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
                 <div class="container mx-auto px-4 text-center">
                     <div class="max-w-3xl mx-auto glassmorphism p-8 md:p-12">
                         <h2 class="heading-font text-3xl md:text-4xl font-bold text-white mb-6">Make a Difference Today</h2>
@@ -625,7 +625,7 @@ class SPARouter {
                                             </div>
                                             <div>
                                                 <h3 class="font-bold text-gray-800 dark:text-white mb-1">Email</h3>
-                                                <p class="text-gray-600 dark:text-gray-300">info@example.org</p>
+                                                <p class="text-gray-600 dark:text-gray-300">info@krishnagopalgaushala.org</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1261,9 +1261,4 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Make router globally available for debugging
     window.router = router;
-
 });
-
-
-
-
