@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Krishna Gopal Gaushala Sewa Trust</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // If accessed directly, redirect to main SPA
+        if (window.location.pathname.endsWith('.html')) {
+            const route = window.location.pathname.split('/').pop().replace('.html', '');
+            if (route !== 'index') {
+                window.location.href = '/' + (route === 'donate' ? 'donate' : route);
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
+    <!-- SPA will load here -->
+    <div id="spa-loading" class="h-screen flex items-center justify-center">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-green-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="text-gray-600 dark:text-gray-300">Loading...</p>
+        </div>
+    </div>
+    
+    <script>
+        // Load the main SPA
+        window.location.href = '/donate';
+    </script>
+</body>
+</html>
