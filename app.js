@@ -5,7 +5,7 @@
 class SPARouter {
     constructor() {
         this.routes = {
-            '/KGGST/': this.homePage,
+            '/KGGST': this.homePage,
             '/KGGST/about.html': this.aboutPage,
             '/KGGST/mission.html': this.missionPage,
             '/KGGST/team.html': this.teamPage,
@@ -1263,5 +1263,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.router = router;
 
 });
+
 
 
