@@ -11,9 +11,9 @@
     <script>
         // If accessed directly, redirect to main SPA
         if (window.location.pathname.endsWith('.html')) {
-            const route = window.location.pathname.split('/').pop().replace('.html', '');
+            const route = window.location.pathname.split('/').pop();
             if (route !== 'index') {
-                window.location.href = '/' + (route === 'about' ? 'about' : route);
+                window.location.href = '/' + (route === 'about.html' ? 'about.html' : route);
             }
         }
     </script>
@@ -32,4 +32,5 @@
         window.location.href = '/about';
     </script>
 </body>
+
 </html>
