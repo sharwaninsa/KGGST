@@ -6,11 +6,11 @@ class SPARouter {
     constructor() {
         this.routes = {
             '/KGGST/': this.homePage,
-            '/KGGST/about': this.aboutPage,
-            '/KGGST/mission': this.missionPage,
-            '/KGGST/team': this.teamPage,
-            '/KGGST/contact': this.contactPage,
-            '/KGGST/donate': this.donatePage
+            '/KGGST/about.html': this.aboutPage,
+            '/KGGST/mission.html': this.missionPage,
+            '/KGGST/team.html': this.teamPage,
+            '/KGGST/contact.html': this.contactPage,
+            '/KGGST/donate.html': this.donatePage
         };
         
         this.app = document.getElementById('app');
@@ -60,9 +60,9 @@ class SPARouter {
     
     navigate(path) {
         // Clean up path (remove .html extension if present)
-        if (path.endsWith('.html')) {
-            path = path.replace('.html', '');
-        }
+        // if (path.endsWith('.html')) {
+        //     path = path.replace('.html', '');
+        // }
         
         // Handle root path
         if (path === '/KGGST/index' || path === '/KGGST/index.html') {
@@ -70,8 +70,8 @@ class SPARouter {
         }
         
         // Update URL without page reload
-        if (window.location.pathname !== `KGGST/${path}`) {
-            window.history.pushState({}, '', `/KGGST/${path}`);
+        if (window.location.pathname !== `KGGST${path}`) {
+            window.history.pushState({}, '', `/KGGST${path}`);
         }
         
         // Update active link in navbar
@@ -1263,4 +1263,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.router = router;
 
 });
+
 
