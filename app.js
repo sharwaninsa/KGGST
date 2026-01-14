@@ -5,7 +5,7 @@
 class SPARouter {
     constructor() {
         this.routes = {
-            '/KGGST': this.homePage,
+            '/': this.homePage,
             '/KGGST/about.html': this.aboutPage,
             '/KGGST/mission.html': this.missionPage,
             '/KGGST/team.html': this.teamPage,
@@ -32,7 +32,7 @@ class SPARouter {
                 e.preventDefault();
                 const link = e.target.closest('.nav-link');
                 const path = link.getAttribute('href');
-                this.navigate(path);
+                this.navigate(`${path}`.html);
             }
         });
         
@@ -1263,6 +1263,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.router = router;
 
 });
+
 
 
 
