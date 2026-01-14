@@ -5,12 +5,12 @@
 class SPARouter {
     constructor() {
         this.routes = {
-            '/': this.homePage,
-            '/about': this.aboutPage,
-            '/mission': this.missionPage,
-            '/team': this.teamPage,
-            '/contact': this.contactPage,
-            '/donate': this.donatePage
+            '/KGGST/': this.homePage,
+            '/KGGST/about': this.aboutPage,
+            '/KGGST/mission': this.missionPage,
+            '/KGGST/team': this.teamPage,
+            '/KGGST/contact': this.contactPage,
+            '/KGGST/donate': this.donatePage
         };
         
         this.app = document.getElementById('app');
@@ -65,12 +65,12 @@ class SPARouter {
         }
         
         // Handle root path
-        if (path === '/index' || path === '/index.html') {
+        if (path === '/KGGST/index' || path === '/KGGST/index.html') {
             path = '/KGSST/';
         }
         
         // Update URL without page reload
-        if (window.location.pathname !== path) {
+        if (window.location.pathname !== `KGGST/${path}`) {
             window.history.pushState({}, '', `/KGGST/${path}`);
         }
         
@@ -1263,3 +1263,4 @@ document.addEventListener('DOMContentLoaded', () => {
     window.router = router;
 
 });
+
