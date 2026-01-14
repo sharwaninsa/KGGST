@@ -66,12 +66,12 @@ class SPARouter {
         
         // Handle root path
         if (path === '/index' || path === '/index.html') {
-            path = '/';
+            path = '/KGSST/';
         }
         
         // Update URL without page reload
         if (window.location.pathname !== path) {
-            window.history.pushState({}, '', path);
+            window.history.pushState({}, '', `/KGGST/${path}`);
         }
         
         // Update active link in navbar
@@ -1261,4 +1261,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Make router globally available for debugging
     window.router = router;
+
 });
